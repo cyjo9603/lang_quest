@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>accordion UI 1</title>
+  </head>
+  <script>
+    const VISIBLECLASS = 'visibleContents';
+
+    function accodionSelect(sectionNumber) {
+      const accordionOpen = document.querySelectorAll('.sectionContents');
+      if (objectSearch(accordionOpen[sectionNumber].classList, VISIBLECLASS)) {
+        accordionOpen[sectionNumber].classList.remove(VISIBLECLASS);
+      } else {
+        accordionOpen[sectionNumber].classList.add(VISIBLECLASS);
+      }
+    }
+
+    function objectSearch(inputObject, searchValue) {
+      for (let key in inputObject) {
+        if (inputObject[key] === searchValue) {
+          return true;
+        }
+      }
+      return false;
+    }
+  </script>
+  <style>
+    /* // RESET */
+    body,
+    header,
+    section,
+    div,
+    a,
+    h1,
+    h2,
+    h3,
+    hr {
+      padding: 0;
+      margin: 0;
+    }
+    a {
+      text-decoration: none;
+      color: #000;
+    }
+
+    /* // CONTAINER */
+    #container {
+      width: 800px;
+      margin: 0 auto;
+    }
+
+    /* // HEADER */
+    header {
+      text-align: center;
+      padding: 25px;
+    }
+
+    /* // SECTION */
+
+    #main > #container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    #main section {
+      background-color: #dddddd;
+      margin-bottom: 5px;
+    }
+
+    .sectionHeader > a {
+      text-align: center;
+      padding: 15px;
+      display: block;
+      color: #666666;
+    }
+
+    .sectionContents {
+      height: 0;
+      visibility: hidden;
+      transition: height 0.5s, visibility 0.5s 0.2s step-start;
+    }
+
+    /* // EFFECT */
+    .visibleContents {
+      height: 100px;
+      visibility: visible;
+    }
+  </style>
+  <body>
+    <header><h1>Accordion</h1></header>
+    <section id="main">
+      <div id="container">
+        <section>
+          <div class="sectionHeader">
+            <a href="#" onclick="accodionSelect(0);">
+              <h2>section1</h2>
+            </a>
+          </div>
+          <div class="sectionContents">
+            <h3>The cat is similar in anatomy to the other felid species, has a strong flexible body, quick reflexes, sharp teeth and retractable claws adapted to killing small prey.</h3>
+          </div>
+        </section>
+        <section>
+          <div class="sectionHeader">
+            <a href="#" onclick="accodionSelect(1);">
+              <h2>section2</h2>
+            </a>
+          </div>
+          <div class="sectionContents">
+            <h3>The origin of the English word 'cat', Old English catt, is thought to be the Late Latin word cattus, which was first used at the beginning of the 6th century.</h3>
+          </div>
+        </section>
+        <section>
+          <div class="sectionHeader">
+            <a href="#" onclick="accodionSelect(2);">
+              <h2>section3</h2>
+            </a>
+          </div>
+          <div class="sectionContents">
+            <h3>Cats have protractable and retractable claws. In their normal, relaxed position, the claws are sheathed with the skin and fur around the paw's toe pads.</h3>
+          </div>
+        </section>
+      </div>
+    </section>
+  </body>
+</html>

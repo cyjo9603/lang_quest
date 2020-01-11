@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>벽돌깨기 게임</title>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <header>
+        <div class="header_score">
+          <h1>SCORE: <span id="js_score"></span></h1>
+        </div>
+        <div class="header_lives">
+          <h1>LIFE: <span id="js_lives"></span></h1>
+        </div>
+      </header>
+      <hr />
+      <canvas id="gameBoard" width="480" height="600"></canvas>
+    </div>
+    <script src="js/init.js"></script>
+    <script src="js/ball.js"></script>
+    <script src="js/paddle.js"></script>
+    <script src="js/block.js"></script>
+    <script src="js/status.js"></script>
+    <script src="js/draw.js"></script>
+  </body>
+</html>

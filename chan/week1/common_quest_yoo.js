@@ -9,7 +9,7 @@ function getPlayerList(inputList) {
   for (let key in familynameFrequency) {
     if (familynameFrequency[key][1] > 4) {
       const playerList = getFamilynamePlayerList(inputList, playerFamilynameList, familynameFrequency[key][0]);
-      return console.log(playerList);
+      return console.log(`${playerList}`);
     } else {
       return errorMessage('내일 뛸 선수가 없어서 기권합니다.');
     }

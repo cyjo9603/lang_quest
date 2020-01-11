@@ -21,9 +21,9 @@ function baseballGame(inputNumber) {
   count++;
 
   if (strikeNumber === 3) {
-    console.log('count : ' + count + ', 3STRIKE CLEAR!');
+    console.log(`count : ${count}, 3STRIKE CLEAR!`);
   } else {
-    console.log('count : ' + count + ', STRIKE : ' + strikeNumber + ' BALL : ' + ballNumber);
+    console.log(`count : ${count}, STRIKE : ${strikeNumber} BALL : ${ballNumber}`);
   }
   return;
 }
